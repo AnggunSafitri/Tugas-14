@@ -25,6 +25,15 @@ class KategoriController extends Controller
     
     public function store(Request $request)
     {
+        $rules = [
+            'nama_kategori' => 'required',
+        ];
+        $massages = [
+            'required' => ':attribute wajib diisi',
+        ];
+
+        $this->validate($request, $rules, $massages);
+
         $kategori = New Kategori;
         $kategori->nama_kategori = request('nama_kategori');
         $kategori->save();

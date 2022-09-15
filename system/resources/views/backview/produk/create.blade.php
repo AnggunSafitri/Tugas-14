@@ -10,6 +10,7 @@
                             <div class="card-header">
                                 Tambah Data Produk
                             </div>
+                            
                             <!-- form start -->
                             <form action="{{ url('admin/produk') }}" method="POST">
                                 @csrf
@@ -31,8 +32,11 @@
                                         <div class="form-group row">
                                             <label for="inputEmail3" class="col-sm-2 col-form-label">Nama Produk</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="Nama Produk"
+                                                <input type="text" class="form-control @error('nama_produk') is-invalid @enderror" placeholder="Nama Produk"
                                                     name="nama_produk">
+                                                    @error('nama_produk')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
 
@@ -51,8 +55,11 @@
                                         <div class="form-group row">
                                             <label for="inputEmail3" class="col-sm-2 col-form-label">Warna</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="Warna"
+                                                <input type="text" class="form-control @error('warna') is-invalid @enderror" placeholder="Warna"
                                                     name="warna">
+                                                    @error('warna')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
 
@@ -60,16 +67,22 @@
                                         <div class="form-group row">
                                             <label for="inputEmail3" class="col-sm-2 col-form-label">Stok</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="Stok"
+                                                <input type="text" class="form-control @error('stok') is-invalid @enderror" placeholder="Stok"
                                                     name="stok">
+                                                    @error('stok')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label for="inputEmail3" class="col-sm-2 col-form-label">Harga</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="Harga"
+                                                <input type="text" class="form-control @error('harga') is-invalid @enderror" placeholder="Harga"
                                                     name="harga">
+                                                    @error('harga')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
                                             </div>
                                         </div>
 

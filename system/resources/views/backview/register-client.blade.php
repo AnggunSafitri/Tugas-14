@@ -22,14 +22,22 @@
 
 <body class="hold-transition register-page">
     <div class="register-box">
-       
+
         <div class="card">
             <div class="card-body register-card-body">
                 <div class="card-header text-center">
                     <a href="#" class="h1"><b>Login</b>Shoppink</a>
                 </div>
                 <br>
-
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form action="{{ url('register-client/store') }}" method="post">
                     @csrf
                     <div class="input-group mb-3">
@@ -73,7 +81,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        
+
                         <!-- /.col -->
                         <div class="col-md-12">
                             <button class="btn btn-primary btn-block">Register</button>
@@ -82,7 +90,7 @@
                     </div>
                 </form>
 
-                
+
             </div>
             <!-- /.form-box -->
         </div><!-- /.card -->

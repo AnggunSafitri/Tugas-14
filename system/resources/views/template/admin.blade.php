@@ -20,6 +20,11 @@
     <link rel="stylesheet"
         href="{{ url('public/admin') }}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="{{ url('public/admin') }}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+    <script src="{{url('public/admin')}}/validator/assets/assets/js/lib/jquery-2.1.3.min.js"></script>
+    <script src="{{url('public/admin')}}/validator/node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="{{url('public/admin')}}/validator/node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{{url('public/admin')}}/validator/assets/assets/validator/validator.js"></script> 
 </head>
 <!--
 `body` tag options:

@@ -20,6 +20,18 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+        $rules = [
+            'nama' => ['required'],
+            'username' => ['required'],
+            'email' => ['required'],
+            'password' => ['required']
+        ];
+        $massages = [
+            'required' => ':Attribute Wajib Diisi',
+        ];
+
+        $this->validate($request, $rules, $massages);
+
         $user = New User;
         $user->nama = request('nama');
         $user->username = request('username');

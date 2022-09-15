@@ -24,8 +24,23 @@ class ProdukController extends Controller
         return view('backview.produk.create', $data);
     }
 
-    public function store(Request $request)
+    public function store()
     {
+
+        $rules = [
+            'nama_produk' => ['required'],
+            'id_kategori' => ['required'],
+            'id_penjual' => ['required'],
+            'warna' => ['required'],
+            'stok' => ['required'],
+            'harga' => ['required']
+        ];
+        $massages = [
+            'required' => ':Attribute Wajib Diisi',
+        ];
+
+        $this->validate($request, $rules, $massages);
+        
         $kategori = New Produk;
         $kategori->nama_produk = request('nama_produk');
         $kategori->id_kategori = request('id_kategori');

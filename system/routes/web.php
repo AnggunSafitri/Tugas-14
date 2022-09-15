@@ -28,8 +28,8 @@ use App\Http\Controllers\ProdukPenjualController;
 */
 
 
-Route::resource('/', AdminController::class);
 Route::prefix('admin')->middleware('auth')->group(function(){
+    Route::resource('/', AdminController::class);
     Route::post('produk/filter', [ProdukController::class, 'filter']);
     Route::resource('kategori', KategoriController::class);
     Route::resource('produk', ProdukController::class);

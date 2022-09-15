@@ -14,8 +14,22 @@ class RegisterController extends Controller
         return view('backview.register-client');
     }
 
-    public function storeClient(Request $request)
+    public function storeClient()
     {
+        $rules = [
+            'nama' => ['required'],
+            'username' => ['required'],
+            'confir_password' => ['required'],
+            'email' => ['required'],
+            'no_hp' => ['required']
+        ];
+  
+    $massages = [
+        'required' => ':Attribute Wajib Diisi',
+    ];
+
+    $this->validate($request, $rules, $massages);
+
         $client = New Client();
         $client->nama = request('nama');
         $client->username = request('username');
